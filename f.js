@@ -1,0 +1,1 @@
+n=4e5;r=(u,c,p=fetch(u='https://'+u,c?{}:{method:'HEAD'}).then(r=>r.ok?c?r.json():open(u):Q))=>c?p.then(c):0;f=(l,_)=>r('qrng.anu.edu.au/API/jsonI.php?z='+Date.now()+'&type=uint8&length='+l,d=>{for(d=d.data,e=0,E=1;e<E-E%n?(r('fimfiction.net/story/download/'+e%n+'/html'),e=e/n|0,E=E/n|0):E%=n;)for(e%=n;E<n;E*=256)e+=E*(d.length?d.pop():_[E])})
