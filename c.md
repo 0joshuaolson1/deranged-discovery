@@ -1,6 +1,6 @@
-# Accidentally around the HTTPS world in 597 characters
+# Accidentally Around the Web in 544 Characters
 
-Ah, [JavaScript](https://www.ecma-international.org/ecma-262/6.0/). It tempted me to go [code golfing](https://en.wikipedia.org/wiki/Code_golf). I didn't need later features, but I'll be referencing [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) for convenience, browser APIs, and the confidence that the code works with other standards/implementations besides in Chrom(e|ium) browsers.
+Ah, [JavaScript](https://www.ecma-international.org/ecma-262/6.0/). It tempted me to go [code golfing](https://en.wikipedia.org/wiki/Code_golf). I didn't need later features, but I'll be referencing [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence) for convenience and browser APIs.
 
 ## The problem statement
 
@@ -18,10 +18,10 @@ Afaict, basically every past (may still exist) and (almost) current TLS-enabled 
 
 ## The code
 
-The [c.js file](https://github.com/0joshuaolson1/deranged-discovery/blob/master/c.js) ([direct permalink](https://raw.githubusercontent.com/0joshuaolson1/deranged-discovery/28b8675eafe35f7bd2dfd6ea8ef1d4ebc9956d97/c.js)) contains 597 UTF-8/ASCII bytes excluding GitHub's stoopid newline at the end ([GitLab](https://about.gitlab.com/2016/05/11/git-repository-pricing/) ftw):
+The [c.js file](https://github.com/0joshuaolson1/deranged-discovery/blob/cb5d35e632c74597263d0c65bad7312aa5efb202/c.js) ([direct/raw](https://raw.githubusercontent.com/0joshuaolson1/deranged-discovery/cb5d35e632c74597263d0c65bad7312aa5efb202/c.js)) contains 544 UTF-8/ASCII bytes excluding GitHub's newline tampering at the end ([GitLab](https://about.gitlab.com/2016/05/11/git-repository-pricing/) ftw):
 ```
-n=5e8;r=(c,m)=>u=>fetch(u='https://'+u,m).then(r=>r.text()).then(s=>c(u,s));c=l=>r((u,d,_)=>{for(d=JSON.parse(d).data,e=0,E=1;e<E-E%n?(r((u,s,$='&nbsp;',_=$+$+$+$,b='<BR>'+_,e=b+_+_+_+'DNS:',i=s.search(b+_+_+'X509v3'+$+'Subject'+$+'Alternative'+$+'Name:'+$+e),j,S=new Set)=>{for(j=i+=~i?129:open(s.slice(-1)!=`
-`?u:I)();i==j;j=s.indexOf(e,i))S.add(s.slice(2*(s[i=j+104]=='*')+i,i=s.indexOf(b,i)));S.forEach(r(open,{method:'HEAD'}))})('crt.sh/?id='+e%n),e=e/n|0,E=E/n|0):E%=n;)for(e%=n;E<n;E*=256)e+=E*(d.length?d.pop():_[E])})('qrng.anu.edu.au/API/jsonI.php?z='+Date.now()+'&type=uint8&length='+l)
+n=5e8;r=(c,m)=>u=>fetch(u='https://'+u,m).then(r=>r.text()).then(s=>c(u,s));c=l=>r((_,d)=>{e=0;E=1;eval('_='+d).data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(r((u,s,$='&nbsp;',_=$+$+$+$,b='<BR>'+_,e=b+_+_+_+'DNS:',i=s[f='indexOf'](b+_+_+'X509v3'+$+'Subject'+$+'Alternative'+$+'Name:'+$+e),j,S=new Set)=>{for(j=i+=~i?129:open(s.slice(-1)!=`
+`?u:I)();i==j;j=s[f](e,i))S.add(s.slice(2*(s[i=j+104]=='*')+i,i=s[f](b,i)));S.forEach(r(open,{method:'HEAD'}))})('crt.sh/?id='+e%n),e=e/n|0,E=E/n|0):E%=n})})('qrng.anu.edu.au/API/jsonI.php?type=uint8&length='+l)
 ```
 Unminified:
 ```
@@ -29,9 +29,9 @@ Unminified:
  2|
 ```
 
-You're supposed to evaluate something like `c(4)` (bigger numbers open more sites with high probability), named after 'certificate' or `crt.sh`. The [Chrome DevTools console](https://developers.google.com/web/tools/chrome-devtools/shortcuts) is ideal due to an intentional error message explained later. In any case, you'll need to run this in something like [about:blank](about:blank) with a [CORS workaround](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld) so it can access webpages.
+Type and run `c(4)`, named after 'certificate' or `crt.sh`, or use a bigger number ≤ 1024 to open more sites with high probability. Allow popups from [`about:blank`](http://about:blank) (you'll have to copy/type that in Firefox) and use a CORS workaround like [this](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld) so `c` can access webpages. I've tested it in Chromium and Firefox.
 
-How does it work? I'm glad you asked!
+So how does it work? I'm glad you asked!
 ```
  3|request = (url, callbackCtor) =>
  4|    fetch(url)
@@ -41,4 +41,8 @@ How does it work? I'm glad you asked!
 ```
 `c` is a one-parameter [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) that requests `4` or whatever bytes from a quantum random number API. `request` is a separate function (taking a callback) because inlining/specializing it in the two places where it's used would be more verbose (as would [promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises) or [async/await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)).
 
-The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) does use promises (without error handling), and it's more concise than [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest). The first `then` function runs if the website returns something, even an error code. The last `then` function 
+The [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) does use promises (without error handling), and it's more concise than [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest). The first `then` function runs if the website returns something, even an error code. The last `then` function
+
+https://tools.ietf.org/html/rfc7127#section-2
+https://tools.ietf.org/html/rfc7234#section-4.2.2
+https://stackoverflow.com/questions/49547/how-to-control-web-page-caching-across-all-browsers/99183#99183
