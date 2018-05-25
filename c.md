@@ -8,7 +8,7 @@ I wanted to open [truly](https://www.av8n.com/turbid/paper/turbid.htm#sec-def-ra
 
 ## A solution
 
-WHOIS services require already knowing a website in order to look it up. Reverse IP search has opt-in (in the registration process), robots.txt, and mention dependence problems since they rely on [indexers](https://www.domcop.com/top-10-million-domains)/[archivers](https://archive.org/). Public registrar logs aren't really a thing. [Zone data](https://dnpedia.com/tlds/daily.php) [isn't exactly open or centralized](https://www.iana.org/domains/root/db), especially for ccTLDs.
+WHOIS services require already knowing a website in order to look it up. Reverse IP search has opt-in (in the registration process), robots.txt, and mention-dependence problems since they rely on [indexers](https://www.domcop.com/top-10-million-domains)/[archivers](https://archive.org/). Public registrar logs aren't really a thing. [Zone data](https://dnpedia.com/tlds/daily.php) [isn't exactly open or centralized](https://www.iana.org/domains/root/db), especially for ccTLDs.
 
 Then I found this:
 
@@ -94,7 +94,7 @@ Now for `request`:
  4|    .then(response => response.text())
  5|    .then(text => callback(url, text));
 ```
-It uses the [fetch api](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)instead of the older, more verbose [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) object. `request` passes its `method` argument to `fetch`, which defaults to doing an HTTP GET with the `url` when `method` is `undefined` as when `c` only provides `callback`.
+It uses the [fetch api](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) instead of the older, more verbose [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) object. `request` passes its `method` argument to `fetch`, which defaults to doing an HTTP GET with the `url` when `method` is `undefined` as when `c` only provides `callback`.
 
 Every requested `url` in the code gets to omit `https://`, which the now local variable `url` is freely modified to include for the callback's benefit. Also, the '`.then`' [Promise chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) doesn't handle errors like certain HTTP status codes - instead of trusting them, `callback` runs as long as the site responds with something. If `c` can't get its random bytes from `text`, it'll stop with an exception anyway.
 
