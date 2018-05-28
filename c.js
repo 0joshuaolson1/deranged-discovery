@@ -15,7 +15,7 @@ c = rngByteCount =>
     *   *   *   */  if(~offset)                                                     /*
     *   *   *   *   */  new Set(                                                    /*
     *   *   *   *   *   */  blob.substr(offset + 6, blob.charCodeAt(offset + 4) - 1)/*
-    *   *   *   *   *   */  .split('').map(domain =>                               /*
+    *   *   *   *   *   */  .split('').map(domain =>                                /*
     *   *   *   *   *   *   */  domain.slice(domain[1] == '*' ? 3 : 1)              /*
     *   *   *   *   *   */  )                                                       /*
     *   *   *   *   */  ).forEach(request(open, {method: 'HEAD'}))                  /*
