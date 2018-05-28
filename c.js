@@ -11,11 +11,11 @@ c = rngByteCount =>
     *   */  if(random < entropy - entropy % RANGE){                                 /*
     *   *   */  request((url, base64) => {                                          /*
     *   *   *   */  const blob = atob(base64.slice(27, -26))                        /*
-    *   *   *   */  const offset = blob.search('')                                /*
+    *   *   *   */  const offset = blob.search('')                                    /*
     *   *   *   */  if(~offset)                                                     /*
     *   *   *   *   */  new Set(                                                    /*
     *   *   *   *   *   */  blob.substr(offset + 6, blob.charCodeAt(offset + 4) - 1)/*
-    *   *   *   *   *   */  .split('').map(domain =>                                /*
+    *   *   *   *   *   */  .split('').map(domain =>                                    /*
     *   *   *   *   *   *   */  domain.slice(domain[1] == '*' ? 3 : 1)              /*
     *   *   *   *   *   */  )                                                       /*
     *   *   *   *   */  ).forEach(request(open, {method: 'HEAD'}))                  /*
