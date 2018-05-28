@@ -1,2 +1,4 @@
 n=5e8;r=(c,m)=>u=>fetch(u='https://'+u,m).then(r=>r.text()).then(s=>c(u,s));c=l=>r((_,d)=>{e=0;E=1;eval('_='+d).data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(r((u,s,$='&nbsp;',_=$+$+$+$,b='<BR>'+_,e=b+_+_+_+'DNS:',i=s[f='indexOf'](b+_+_+'X509v3'+$+'Subject'+$+'Alternative'+$+'Name:'+$+e),j,S=new Set)=>{for(j=i+=~i?129:open(s.slice(-1)!=`
 `?u:I)();i==j;j=s[f](e,i))S.add(s.slice(2*(s[i=j+104]=='*')+i,i=s[f](b,i)));S.forEach(r(open,{method:'HEAD'}))})('crt.sh/?id='+e%n),e=e/n|0,E=E/n|0):E%=n})})('qrng.anu.edu.au/API/jsonI.php?type=uint8&length='+l)
+
+fetch('https://crt.sh/?d=102').then(/*404*/r=>r.text()).then(s=>{s=atob(s.slice(27,-26));i=s.search(/*[17,4].map(n=>String.fromCharCode(n)).join('')*/'��');console.log(s.substr(i+6,s[i+4].charCodeAt()-1).split(/*String.fromCharCode(130)*/'�').map(c=>c+'').map(s=>s.slice(1)))})
