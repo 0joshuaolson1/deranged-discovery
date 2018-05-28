@@ -1,5 +1,8 @@
 n=5e8;r=(c,m)=>u=>fetch(u='https://'+u,m).then(r=>r.text()).then(t=>c(u,t));c=l=>r((_,t,e=0,E=1)=>eval('_='+t).data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(r((u,t,b=atob(t.slice(27,-26)),o=b.search(''))=>~o?new Set(b.substr(o+6,b.charCodeAt(o+4)-1).split('').map(d=>d.slice(d[1]=='*'?3:1))).forEach(r(open,{method:'HEAD'})):open(u.slice(0,16)+'opt=nometadata&i'+u.slice(16)))('crt.sh/?d='+e%n),e=e/n|0,E=E/n|0):E%=n}))('qrng.anu.edu.au/API/jsonI.php?type=uint8&length='+l)
 /*
+eval("!".replace(/!/g,''))
+C="";[]           .map(c=>C.replace(c[0],c.slice(1)));eval(C)
+     "".split(' ')
 2
 x2: ')@((@(d@(t@)(@),@):@+u@,E@,b@,e@,m@.a@.m@/n@16@=e@=n@>r@E%@E*@E=@ap@ar@d=@da@e%@he@m)@ma@me@ng@n|@o+@od@p(@r=@t)@t,@t.@t=@u=@|0@})
 x3: %n@(o@(r@)=@,t@.t@0,@1)@6)@at@b.@h(@n(@op@pe@ta@u,
