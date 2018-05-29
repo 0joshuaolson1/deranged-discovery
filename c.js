@@ -25,4 +25,4 @@ const c = rngByteCount =>                            // use c(4 to 1024)
       /* */     entropy = entropy/RANGE | 0
             } else entropy %= RANGE
         }
-    ))('qrng.anu.edu.au/API/jsonI.php?type=uint8&length='+l)
+    ))('qrng.anu.edu.au/API/jsonI.php?type=uint8&length=' + rngByteCount)
