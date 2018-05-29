@@ -1,4 +1,4 @@
-const RANGE = 5e8                                    // 500 000 000 is enough in 2018
+const RANGE = 6e8                                    // 600 000 000 is enough in 2018
 const request = (callback, method) => url =>         // use CORS mod, blank tab (CSP)
     fetch(url = 'https://' + url, method)
     .then(response => response.text())
