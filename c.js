@@ -19,7 +19,7 @@ const c = rngByteCount =>                            // use c(4 to 1024)
       /* */   /* */             domain => domain.slice(domain[1] == '*' ? 3 : 1)
                             )
                         ).forEach(request(open, {method: 'HEAD'}))
-      /* */   /* */ else open(url.slice(0, 16) + 'opt=nometadata&i' + u.slice(16))
+      /* */   /* */ else open(url.slice(0, 16) + 'opt=nometadata&i' + url.slice(16))
                 })('crt.sh/?d=' + random % RANGE)
                 random = random/RANGE | 0
       /* */     entropy = entropy/RANGE | 0
