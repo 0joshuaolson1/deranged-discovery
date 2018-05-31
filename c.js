@@ -1,6 +1,2 @@
-n=6e8;r=(c,m)=>u=>fetch(u='https://'+u,m).then(r=>r.text()).then(t=>c(u,t));c=l=>r((_,t,e=0,E=1)=>eval('_='+t).data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(r((u,t,b=atob(t.slice(27,-26)),o=b.search(''))=>~o?new Set(b.substr(o+6,b.charCodeAt(o+4)-1).split('').map(d=>d.slice(d[1]=='*'?3:1))).forEach(r(open,{method:'HEAD'})):open(u.slice(0,16)+'opt=nometadata&i'+u.slice(16)))('crt.sh/?d='+e%n),e=e/n|0,E=E/n|0):E%=n}))('qrng.anu.edu.au/API/jsonI.php?type=uint8&length='+l)
-/*
-C="";[]           .map(c=>C.replace(RegExp(c[0],'g'),c.slice(1)));eval(C)
-     "".split(' ')
-for(i)
-*/
+n=6e8;r=(c,m,h='https://')=>u=>fetch(u=h+u,m).then(r=>r.text(e=0,E=1)).then(t=>c(u,t));r((_,t)=>eval('_='+t).data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(r((u,t,$='&nbsp;',_=$+$+$+$,b='<BR>'+_,e=b+_+_+_+'DNS:',i=s.search(b+_+_+'X509v3'+$+'Subject'+$+'Alternative'+$+'Name:'+$+e),j,S=new Set,x)=>{for(j=i+=~i?129:open(s.slice(-1)!=`
+`?u:I)();i==j;j=s.indexOf(e,i))S.add(s.slice(2*(s[i=j+104]=='*')+i,i=s.indexOf(b,i)));['http://',x].map(h=>S.forEach(r(open,{method:'HEAD'},h)))})('crt.sh/?opt=nometadata&id='+e%n),e=e/n|0,E=E/n|0):E%=n}))('qrng.anu.edu.au/API/jsonI.php?type=uint8&length=16')
