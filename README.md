@@ -1,4 +1,4 @@
-0. Use a Chromium-based or Firefox-based browser if these steps don't work for you.
+0. Use a recent Chromium (-based) or Firefox (-based) browser if these steps don't work for you.
 1. Allow popups and install and enable a CORS extension.
 2. Copy code from
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/s.js - SoundCloud
