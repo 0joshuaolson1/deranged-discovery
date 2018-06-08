@@ -1,1 +1,1 @@
-n=5e5;h='https://';fetch(h+'qrng.anu.edu.au/API/jsonI.php?&type=uint8&length=99').then(r=>r.json(e=0,E=1)).then(d=>d.data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(u=>fetch(u,{method:'HEAD'}).then(r=>r.ok?open(u):0))(h+'fimfiction.net/story/download/'+e%n+'/html',e=e/n|0,E=E/n|0):E%=n}))
+n=5e5;h='https://';(await(await fetch(h+'qrng.anu.edu.au/API/jsonI.php?&type=uint8&length=99')).json(e=0,E=1)).data.map(N=>{e=e%n+E*N;E*=256;e<E-E%n?(u=>fetch(u,{method:'HEAD'}).then(r=>r.ok?open(u):0))(h+'fimfiction.net/story/download/'+e%n+'/html',e=e/n|0,E=E/n|0):E%=n})
