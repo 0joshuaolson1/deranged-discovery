@@ -3,7 +3,6 @@ Tested with a recent version of Chromium. Firefox doesn't have BigInts at the ti
 1. Allow popups and install and enable (change a setting in Safari?) a CORS extension.
 2. Copy code from
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/s.js - SoundCloud
-- https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/b.js - Bandcamp
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/w.js - websites
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/f.js - heh
 
