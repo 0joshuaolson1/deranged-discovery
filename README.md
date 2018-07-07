@@ -2,7 +2,7 @@ Tested with a recent version of Chromium. Firefox doesn't have BigInts at the ti
 
 1. Allow popups.
 2. If on a mobile browser, use the [awkward webpage version](https://0joshuaolson1.github.io/media-multiverse-mobile/) (ignore step 3 except for the media types). Otherwise, install and enable (change a setting in Safari?) a CORS extension.
-(3.) Copy code from
+3. Copy code from
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/s.js - SoundCloud
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/w.js - websites
 - https://raw.githubusercontent.com/0joshuaolson1/media-multiverse/master/f.js - heh
