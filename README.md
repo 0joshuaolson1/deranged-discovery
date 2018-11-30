@@ -12,4 +12,4 @@ and paste in a blank tab's developer/JavaScript console (about:blank).
 
 ## Note
 
-I don't use a CORS extension for BandCamp (b.js takes a while) - it interferes with using some other websites at the same time. I run the code from a page in the BandCamp domain.
+I don't use a CORS extension for BandCamp (b.js takes a while) - it interferes with using some other websites at the same time. I run the code from [a page in the BandCamp domain](https://bandcamp.com/robots.txt).
